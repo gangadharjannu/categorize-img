@@ -42,8 +42,9 @@ const mkDirByPathSync = (targetDir, isRelativeToScript = false) => {
 };
 const moveFiles = (oldPath, newPath) => {
     fs.rename(oldPath, newPath, function (err) {
-        if (err) throw err
-        console.log(`Successfully moved! ${path.basename(oldPath)}`);
+        if (err) {
+            throw err
+        }
     });
 };
 
@@ -58,9 +59,7 @@ const parseDate = str => {
     });
 
     if (D.getFullYear() == y && D.getMonth() == m && D.getDate() == d) {
-        return `${D.getFullYear()}${path.sep}${D.toLocaleString(locale, {
-            month: "long"
-        })}${path.sep}${D.getDate()}`;
+        return `${D.getFullYear()}${path.sep}${month}${path.sep}${D.getDate()}`;
     }
     return 'invalid date';
 };
