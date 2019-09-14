@@ -7,9 +7,9 @@ const utils = require('./utils');
 // error handling
 const args = process.argv.slice(2);
 if (args.length !== 2) {
-    throw new Error('Please pass source and destination folders to continue running the script.');
+    throw new Error('Please input source and destination folders to continue running the script.');
 } else if (!(fs.existsSync(args[0]) || fs.existsSync(args[1]))) {
-    throw new Error('Please pass valid already existed source and destination folders to continue running the script.');
+    throw new Error('Please input valid existed source and destination folders to continue running the script.');
 }
 
 const sourceDirectory = args[0];
