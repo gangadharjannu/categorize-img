@@ -1,12 +1,14 @@
 {
   "name": "categorize-img",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --exec babel-node index.js"
+    "start": "nodemon index.js",
+    "debug": "nodemon --inspect index.js",
+    "lint": "eslint *.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Gangadhar Jannu",
   "license": "ISC",
   "repository": {
     "type": "git",
@@ -17,12 +19,11 @@
   },
   "homepage": "https://github.com/gangadharjannu/categorize-img#readme",
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
-    "eslint": "^5.16.0",
-    "eslint-plugin-import": "^2.18.2",
-    "nodemon": "^1.19.2"
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "nodemon": "^2.0.3"
   },
   "dependencies": {},
-  "description": ""
+  "description": "categorize images"
 }
