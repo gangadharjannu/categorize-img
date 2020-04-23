@@ -3,9 +3,9 @@
   "version": "0.0.1",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
-    "debug": "nodemon --inspect index.js",
-    "lint": "eslint *.js"
+    "start": "nodemon src/index.js",
+    "debug": "nodemon --inspect src/index.js",
+    "lint": "eslint src/**/*.js"
   },
   "keywords": [],
   "author": "Gangadhar Jannu",
