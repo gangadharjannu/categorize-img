@@ -92,17 +92,21 @@ const moveFiles = (oldPath, newPath, callback) => {
 };
 
 const parseDate = (str) => {
-  const y = str.substr(0, 4);
-  const m = str.substr(4, 2) - 1;
-  const d = str.substr(6, 2);
-  const D = new Date(y, m, d);
+  if (!/^(\d){8}$/.test(str)) {
+    return 'invalid date';
+  }
+
+  const year = +str.substr(0, 4);
+  const month = +str.substr(4, 2) - 1;
+  const day = +str.substr(6, 2);
+  const date = new Date(year, month, day);
   const locale = 'en-us';
-  const month = D.toLocaleString(locale, {
+  const monthName = date.toLocaleString(locale, {
     month: 'long',
   });
 
-  if (D.getFullYear() === y && D.getMonth() === m && D.getDate() === d) {
-    return `${D.getFullYear()}${path.sep}${month}${path.sep}${D.getDate()}`;
+  if (date.getFullYear() === year && date.getMonth() === month && date.getDate() === day) {
+    return `${date.getFullYear()}${path.sep}${monthName}${path.sep}${date.getDate()}`;
   }
   return 'invalid date';
 };
