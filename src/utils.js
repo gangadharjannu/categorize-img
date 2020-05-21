@@ -3,6 +3,21 @@ const fs = require('fs');
 
 const constants = require('./constants');
 
+const getEnvLocale = () => {
+  const regex = /[a-z]{2}[-_][A-Z]{2}/;
+  const { env } = process;
+  let locale = null;
+  try {
+    locale = Intl.DateTimeFormat().resolvedOptions().locale;
+  } catch (error) {
+    locale = env.LC_ALL || env.LC_MESSAGES || env.LANG || env.LANGUAGE || env.LC_NAME;
+  }
+  if (locale && locale.match(regex)) {
+    return locale.match(regex)[0];
+  }
+  return 'en-US';
+};
+
 const walkSync = (dir, filelist) => {
   const files = fs.readdirSync(dir);
   /* eslint-disable no-param-reassign */
@@ -100,8 +115,7 @@ const parseDate = (str) => {
   const month = +str.substr(4, 2) - 1;
   const day = +str.substr(6, 2);
   const date = new Date(year, month, day);
-  const locale = 'en-us';
-  const monthName = date.toLocaleString(locale, {
+  const monthName = date.toLocaleString(getEnvLocale(), {
     month: 'long',
   });
 
