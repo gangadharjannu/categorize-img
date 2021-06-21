@@ -71,3 +71,10 @@ typings/
 
 # Serverless directories
 .serverless
+
+# history plugin
+.history
+
+# images folder
+sample_images
+destination_images
