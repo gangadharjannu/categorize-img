@@ -27,6 +27,7 @@ DCIM (folder)
 ```
 
 **sample output**
+
 ```
 target (folder)
     2019 (folder)
@@ -50,4 +51,4 @@ target (folder)
 - [ ] add multiple source folder support
 - [ ] add GUI
 - [ ] optimize script
-  
+- [ ] Add script to reverse the action(rollback changes)
