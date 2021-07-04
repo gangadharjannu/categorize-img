@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <meta
+      http-equiv="X-Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <title>Hello World!</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./left-column-styles.css" />
+    <link rel="stylesheet" href="./right-column-styles.css" />
+  </head>
+
+  <body>
+    <h1 class="title">Hello World!</h1>
+
+    <div class="some-page-wrapper">
+      <div class="row">
+        <div class="column">
+          <div class="left-column">
+            <!-- source directory file input -->
+            <form class="source-directory-form">
+              <input
+                type="text"
+                id="srcDirectory"
+                class="directory-path-input"
+                value="/media/yvs/Drive/first/img/"
+              />
+              <button
+                type="button"
+                id="getFileListBtn"
+                class="directory-form-submit"
+              >
+                Get File list
+              </button>
+            </form>
+            <!-- file list -->
+            <ul id="filesList"></ul>
+            <!-- show preview of tree strcuture based on images -->
+            <div class="left-column-action-buttons">
+              <button type="button" id="categorizeFilesPreview">
+                Preview categorize
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="right-column">
+            <!-- destination directory form -->
+            <form class="destination-directory-form">
+              <input
+                type="text"
+                id="destinationDirectory"
+                class="directory-path-input"
+              />
+            </form>
+            <!-- Tree like hierarihal structure based on year->month->date -->
+            <ul id="myUL"></ul>
+            <!-- Actually move the files from src to dest directory according to the shown tree format -->
+            <div class="right-column-action-buttons">
+              <button type="button" id="categorizeFiles">Categorize</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- You can also require other files to run in this process -->
+    <script src="./renderer.js"></script>
+  </body>
+</html>

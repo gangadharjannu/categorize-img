@@ -1,0 +1,44 @@
+/* html,
+body {
+  height: 100%;
+} */
+
+.title {
+  text-align: center;
+  height: 48px;
+  margin: 0;
+  line-height: 48px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  height: calc(100vh - 48px);
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+}
+
+.left-column,
+.right-column {
+  height: 100%;
+  border: 1px solid green;
+  padding: 5px;
+}
+
+.left-column,
+.right-column {
+  position: relative;
+}
+
+@media screen and (min-width: 800px) {
+  .column {
+    flex: 1;
+  }
+}

@@ -1,0 +1,25 @@
+.source-directory-form {
+  display: flex;
+  justify-content: center;
+}
+
+.directory-path-input {
+  flex: 1;
+}
+
+#filesList {
+  list-style: none;
+}
+
+/* action buttons */
+.left-column-action-buttons {
+  position: absolute;
+  height: 60px;
+  width: 100%;
+  background: orange;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: flex-end;
+}
